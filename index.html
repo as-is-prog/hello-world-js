@@ -147,7 +147,6 @@
                 const originalLog = console.log;
                 console.log = function (...args) {
                     outputElement.textContent += args.join(' ') + '\n';
-                    originalLog.apply(console, args);
                 };
 
                 eval(code);
@@ -159,7 +158,7 @@
         }
 
         function insertHelloWorld() {
-            codeInput.value = `let word = “なんか好きな文字”;
+            codeInput.value = `let word = "なんか好きな文字";
 console.log(word);`;
             updateHighlight();
             saveCode();
