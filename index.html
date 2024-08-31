@@ -103,6 +103,7 @@
     <div class="button-container">
         <div class="button-group">
             <button onclick="insertHelloWorld()">Hello World</button>
+            <button onclick="insertHelloHogeSan()">ご挨拶</button>
             <button onclick="insertTaxCalculation()">消費税計算</button>
         </div>
     </div>
@@ -158,7 +159,15 @@
         }
 
         function insertHelloWorld() {
-            codeInput.value = 'console.log("Hello, World!");';
+            codeInput.value = `let word = “なんか好きな文字”;
+console.log(word);`;
+            updateHighlight();
+            saveCode();
+        }
+
+        function insertHelloHogeSan() {
+            codeInput.value = `let word = prompt();
+console.log(word+"さん、こんにちは。");`;
             updateHighlight();
             saveCode();
         }
